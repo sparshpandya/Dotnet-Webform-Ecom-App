@@ -1,0 +1,117 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="StyleSavvy_FinalProject.Site1" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>StyleSavvy</title>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="Default.aspx">StyleSavvy</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <asp:LinkButton ID="lnkRegister" runat="server" CssClass="nav-link" PostBackUrl="Register">Register</asp:LinkButton>
+                    </li>
+                    <li class="nav-item">
+                        <asp:LinkButton ID="lnkLogin" runat="server" CssClass="nav-link" PostBackUrl="Login">Login</asp:LinkButton>
+                    </li>
+                    <li class="nav-item">
+                        <asp:LinkButton ID="lnkHome" runat="server" CssClass="nav-link" PostBackUrl="Default">Home</asp:LinkButton>
+                    </li>
+                    <li class="nav-item">
+                        <asp:LinkButton ID="lnkProducts" runat="server" CssClass="nav-link" PostBackUrl="Products">Products</asp:LinkButton>
+                    </li>
+                    <li class="nav-item">
+                        <asp:LinkButton ID="lnkAdmin" runat="server" CssClass="nav-link" PostBackUrl="Admin">Admin</asp:LinkButton>
+                    </li>
+                    <li class="nav-item">
+                        <asp:LinkButton ID="lnkCart" runat="server" CssClass="nav-link" PostBackUrl="Cart">Cart</asp:LinkButton>
+                    </li>
+                    <li class="nav-item">
+                        <asp:LinkButton ID="lnkLogout" runat="server" PostBackUrl="Logout" CssClass="nav-link">Logout</asp:LinkButton>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <hr />
+
+        <!-- Main content -->
+        <div class="container mt-4">
+            <asp:ContentPlaceHolder ID="main" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+        <footer class="bg-light text-dark mt-4 pt-4 pb-4">
+            <hr />
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Categories</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <asp:LinkButton ID="lnkMen" runat="server" PostBackUrl="~/Category.aspx?cat=Men">Men</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lnkWomen" runat="server" PostBackUrl="~/Category.aspx?cat=Women">Women</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lnkKids" runat="server" PostBackUrl="~/Category.aspx?cat=Kids">Kids</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lnkAccessories" runat="server" PostBackUrl="~/Category.aspx?cat=Accessories">Accessories</asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <asp:LinkButton ID="lnkQuickHome" runat="server" PostBackUrl="~/Home.aspx">Home</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lnkQuickProducts" runat="server" PostBackUrl="~/Products.aspx">Products</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lnkQuickLogin" runat="server" PostBackUrl="~/Login.aspx">Login</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lnkQuickAdmin" runat="server" PostBackUrl="~/Admin.aspx">Admin</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lnkQuickCart" runat="server" PostBackUrl="~/Cart.aspx">Cart</asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>Subscribe</h5>
+                        <div class="input-group mb-3">
+                            <asp:TextBox ID="txtSubscribe" runat="server" CssClass="form-control" placeholder="Enter your email"></asp:TextBox>
+                            <div class="input-group-append">
+                                <asp:Button ID="btnSubscribe" runat="server" CssClass="btn btn-primary" Text="Subscribe" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <p>&copy; 2024 StyleSavvy. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </form>
+</body>
+</html>
